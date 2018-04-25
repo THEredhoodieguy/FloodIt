@@ -1,16 +1,26 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Title="Flood-it!" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <!--
+        Default.aspx
+        This is the home page of the Flood-it! website. This is where users can play the Flood-it! game and submit their scores to the leaderboard
 
+        Created By: Matthew Pletcher
+        Date Created: 04/24/18
+        Last Edited By: Matthew Pletcher
+        Date Last Edited: 04/24/18
+        Assignment/Project: Final Project
+        Part of: Flood-it!
+        -->
     <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        <h1>Example Jumbotron</h1>
+        <p class="lead">Copy that follows under the headline</p>
+        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Example button &raquo;</a></p>
     </div>
 
     <div class="row">
         <div class="col-md-4">
-            <h2>Getting started</h2>
+            <h2>Heading 1</h2>
             <p>
                 ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
             A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
@@ -29,12 +39,12 @@
             </p>
         </div>
         <div class="col-md-4">
-            <h2>Web Hosting</h2>
+            <h2>Homestar Runner</h2>
             <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
+                Everybody, everybody!
             </p>
             <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
+                <a class="btn btn-default" href="http://homestarrunner.com">Do you has? &raquo;</a>
             </p>
         </div>
     </div>

@@ -13,7 +13,17 @@
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <!--
+        Site.master
+        This is the master page for the whole application, it's used as a template for the rest of the site
 
+        Created By: Matthew Pletcher
+        Date Created: 04/24/18
+        Last Edited By: Matthew Pletcher
+        Date Last Edited: 04/24/18
+        Assignment/Project: Final Project
+        Part of: Flood-it!
+        -->
 </head>
 <body>
     <form runat="server">
@@ -46,12 +56,12 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                    <a class="navbar-brand" runat="server" href="~/">Flood-it!</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
+                        <li><a runat="server" href="~/ContentPages/Tutorial">How to Play</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
@@ -78,7 +88,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                <p>&copy; <%: DateTime.Now.Year %> - Flood-it! by Matthew Pletcher</p>
             </footer>
         </div>
     </form>
