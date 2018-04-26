@@ -8,43 +8,33 @@
         Created By: Matthew Pletcher
         Date Created: 04/24/18
         Last Edited By: Matthew Pletcher
-        Date Last Edited: 04/25/18
+        Date Last Edited: 04/26/18
         Assignment/Project: Final Project
         Part of: Flood-it!
         -->
     <!--Div for holding game board-->
-    <div class="jumbotron">
-        <asp:Table ID="tblGameBoard" runat="server"></asp:Table>
-    </div>
+    <div>
+        <div class="jumbotron">
+            <div class="col-md-4"><asp:Table ID="tblGameBoard" runat="server"></asp:Table></div>
 
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Heading 1</h2>
-            <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
+            <%--<div class="board"></div>--%>
+            
+            <div class="col-md-4">
+                <asp:Button ID="btnColor1" class="btn Color1 colorButton" runat="server" OnClick="btnColor1_Click" />
+                <asp:Button ID="btnColor2" class="btn Color2 colorButton" runat="server" OnClick="btnColor2_Click"/>
+                <asp:Button ID="btnColor3" class="btn Color3 colorButton" runat="server" OnClick="btnColor3_Click"/>
+                <asp:Button ID="btnColor4" class="btn Color4 colorButton" runat="server" OnClick="btnColor4_Click"/>
+                <asp:Button ID="btnColor5" class="btn Color5 colorButton" runat="server" OnClick="btnColor5_Click"/>
+            </div>
         </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Homestar Runner</h2>
-            <p>
-                Everybody, everybody!
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://homestarrunner.com">Do you has? &raquo;</a>
-            </p>
+
+        <div class="row">
+            <div class="col-md-4">
+                Your score:<asp:Label runat="server"></asp:Label>
+                <p>
+                    <a class="btn btn-default" >Reset &raquo;</a>
+                </p>
+            </div>
         </div>
     </div>
 </asp:Content>

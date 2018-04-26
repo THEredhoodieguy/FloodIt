@@ -5,7 +5,7 @@
     Created By: Matthew Pletcher
     Date Created: 04/24/18
     Last Edited By: Matthew Pletcher
-    Date Last Edited: 04/25/18
+    Date Last Edited: 04/26/18
     Assignment/Project: Final Project
     Part of: Flood-it!
 */
@@ -41,8 +41,58 @@ textarea {
     }
 }
 
-/*Set properties of the blocks that make up the gameboard*/
-.block {
+/*Set the properties of the gameboard*/
+#tblGameBoard {
+    border: 2px solid black;
+    height: 500px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/*Class to give height to the container for the game board*/
+.board {
+    height: 400px;
+    background-color: rgb(194, 195, 199);
+}
+
+/*Set the properties of the buttons that play the game*/
+.colorButton {
+    height: 45px;
+    width: 45px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/*Set properties of the blocks that make up the gameboard
+    There are different block classes for different sized boards
+*/
+
+.block8 {
+    /*For a table 8 blocks wide*/
+    height: 40px;
+    width: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.block9 {
+    /*For a table 9 blocks wide*/
+    height: 35px;
+    width: 35px;
+    margin: 0;
+    padding: 0;
+}
+
+.block10 {
+    /*For a table 10 blocks wide*/
+    height: 30px;
+    width: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.block11 {
+    /*For a table 11 blocks wide*/
     height: 25px;
     width: 25px;
     margin: 0;

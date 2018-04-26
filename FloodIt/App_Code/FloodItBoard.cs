@@ -13,7 +13,7 @@ using System.Web;
 /// Created By: Matthew Pletcher
 /// Date Created: 04/24/18
 /// Last Edited By: Matthew Pletcher
-/// Date Last Edited: 04/24/18
+/// Date Last Edited: 04/26/18
 /// Assignment/Project: Final Project
 /// Part of: Flood-it!
 /// </summary>
@@ -103,7 +103,7 @@ public class FloodItBoard
 
             //we add the initial set of simiarly colored neighbors to check
             squaresToChange.Add(corner);
-            foreach (Object neighbor in AdjacentColoredSquares(corner))
+            foreach (int[] neighbor in AdjacentColoredSquares(corner))
             {
                 squaresToCheck.Add(neighbor);
             }
@@ -118,7 +118,7 @@ public class FloodItBoard
                 //add it to the list of squares to change
                 squaresToChange.Add(curNeighbor);
                 //get all of its similarly colored neighbors
-                foreach (Object neighbor in AdjacentColoredSquares(curNeighbor))
+                foreach (int[] neighbor in AdjacentColoredSquares(curNeighbor))
                 {
                     //if the square hasn't been added, we'll go ahead and throw it in the queue
                     if (squaresToCheck.Contains(neighbor) == false && squaresToChange.Contains(neighbor) == false)
@@ -163,22 +163,26 @@ public class FloodItBoard
         //code samples and documentation used for Tuples found here:
         //https://msdn.microsoft.com/en-us/library/system.tuple(v=vs.110).aspx
         if (y > 0 && board[x, y - 1] == thisColor) {
-            neighbors.Add(new int[x, y - 1]);
+            int[] n = { x, y - 1 };
+            neighbors.Add(n);
         }
 
         //check east
         if (x < sizeX - 1 && board[x + 1, y] == thisColor) {
-            neighbors.Add(new int[x + 1, y]);
+            int[] n = { x + 1, y };
+            neighbors.Add(n);
         }
 
         //check south
         if (y < sizeY - 1 && board[x, y + 1] == thisColor) {
-            neighbors.Add(new int[x, y + 1]);
+            int[] n = { x, y + 1 };
+            neighbors.Add(n);
         }
 
         //check west
         if (x > 0 && board[x - 1, y] == thisColor) {
-            neighbors.Add(new int[x - 1, y]);
+            int[] n = { x - 1, y };
+            neighbors.Add(n);
         }
 
         return neighbors;

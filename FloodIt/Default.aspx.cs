@@ -13,7 +13,7 @@ using System.Web.UI.WebControls;
 /// Created By: Matthew Pletcher
 /// Date Created: 04/25/18
 /// Last Edited By: Matthew Pletcher
-/// Date Last Edited: 04/24/18
+/// Date Last Edited: 04/26/18
 /// Assignment/Project: Final Project
 /// Part of: Flood-it!
 /// </summary>
@@ -53,7 +53,7 @@ public partial class _Default : Page
 
             //TODO: implement storage and retrieval of a daily random seed
             //for now, just going to let the game board create its own seed, also going to init with a 8x8 board
-            game = new FloodItBoard(8, 8);
+            game = new FloodItBoard(9, 9);
             //now that the game board has been created and initialized, we can put the game object in the session
             System.Web.HttpContext.Current.Session["gameboard"] = game;
         }
@@ -86,10 +86,47 @@ public partial class _Default : Page
                 TableCell c = new TableCell();
                 //got code on how to add CSS class from code behind here:
                 //https://stackoverflow.com/questions/12196112/how-to-add-css-class-to-asp-net-from-code-behind?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
-                c.CssClass = "Color" + game.GetColor(i,j) + " block";
+                //we change the size of the board based on how many squares it has horizontally
+                c.CssClass = "Color" + game.GetColor(i,j) + " block" + game.GetWidth();
                 r.Cells.Add(c);
             }
             tblGameBoard.Rows.Add(r);
         }
+    }
+
+    //Set of event handlers for the buttons
+    protected void btnColor1_Click(object sender, EventArgs e)
+    {
+        FloodItBoard game = (FloodItBoard)System.Web.HttpContext.Current.Session["gameboard"];
+        game.FloodBoard(1);
+        System.Web.HttpContext.Current.Session["gameboard"] = game;
+    }
+
+    protected void btnColor2_Click(object sender, EventArgs e)
+    {
+        FloodItBoard game = (FloodItBoard)System.Web.HttpContext.Current.Session["gameboard"];
+        game.FloodBoard(2);
+        System.Web.HttpContext.Current.Session["gameboard"] = game;
+    }
+
+    protected void btnColor3_Click(object sender, EventArgs e)
+    {
+        FloodItBoard game = (FloodItBoard)System.Web.HttpContext.Current.Session["gameboard"];
+        game.FloodBoard(3);
+        System.Web.HttpContext.Current.Session["gameboard"] = game;
+    }
+
+    protected void btnColor4_Click(object sender, EventArgs e)
+    {
+        FloodItBoard game = (FloodItBoard)System.Web.HttpContext.Current.Session["gameboard"];
+        game.FloodBoard(4);
+        System.Web.HttpContext.Current.Session["gameboard"] = game;
+    }
+
+    protected void btnColor5_Click(object sender, EventArgs e)
+    {
+        FloodItBoard game = (FloodItBoard)System.Web.HttpContext.Current.Session["gameboard"];
+        game.FloodBoard(5);
+        System.Web.HttpContext.Current.Session["gameboard"] = game;
     }
 }
