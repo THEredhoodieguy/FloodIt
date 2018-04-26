@@ -30,7 +30,7 @@
 
         <div class="row">
             <div class="col-md-4">
-                Your score:<asp:Label runat="server"></asp:Label>
+                Your score:<asp:Label runat="server" ID="lblScoreField"></asp:Label>
                 <p>
                     <a class="btn btn-default" >Reset &raquo;</a>
                 </p>

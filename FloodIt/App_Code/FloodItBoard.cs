@@ -99,11 +99,11 @@ public class FloodItBoard
             ArrayList squaresToChange = new ArrayList();
             ArrayList squaresToCheck = new ArrayList();
 
-            int[] corner = { 0, 0 };
+            Tuple<int, int> corner = Tuple.Create( 0, 0 );
 
             //we add the initial set of simiarly colored neighbors to check
             squaresToChange.Add(corner);
-            foreach (int[] neighbor in AdjacentColoredSquares(corner))
+            foreach (Tuple<int, int> neighbor in AdjacentColoredSquares(corner))
             {
                 squaresToCheck.Add(neighbor);
             }
@@ -112,13 +112,13 @@ public class FloodItBoard
             while (squaresToCheck.Count > 0)
             {
                 //grab a neighbor
-                int[] curNeighbor = (int[])squaresToCheck[0];
+                Tuple<int, int> curNeighbor = (Tuple<int, int>)squaresToCheck[0];
                 //remove the neighbor from the list
                 squaresToCheck.RemoveAt(0);
                 //add it to the list of squares to change
                 squaresToChange.Add(curNeighbor);
                 //get all of its similarly colored neighbors
-                foreach (int[] neighbor in AdjacentColoredSquares(curNeighbor))
+                foreach (Tuple<int, int> neighbor in AdjacentColoredSquares(curNeighbor))
                 {
                     //if the square hasn't been added, we'll go ahead and throw it in the queue
                     if (squaresToCheck.Contains(neighbor) == false && squaresToChange.Contains(neighbor) == false)
@@ -129,9 +129,9 @@ public class FloodItBoard
             }
 
             //now we need to change all of the squares' colors
-            foreach (int[] square in squaresToChange)
+            foreach (Tuple<int, int> square in squaresToChange)
             {
-                board[square[0], square[1]] = color;
+                board[square.Item1, square.Item2] = color;
             }
             //we need to increase the number of moves done
             numMoves++;
@@ -142,7 +142,7 @@ public class FloodItBoard
         }
     }
 
-    private ArrayList AdjacentColoredSquares(int[] coords)
+    private ArrayList AdjacentColoredSquares(Tuple<int, int> coords)
     {
         //takes a square's coordinates and returns all its neighboring squares with the same color value
         //neighboring means directly north, east, south, or west in this case
@@ -153,8 +153,8 @@ public class FloodItBoard
         //https://msdn.microsoft.com/en-us/library/system.collections.arraylist(v=vs.110).aspx
         ArrayList neighbors = new ArrayList();
 
-        int x = coords[0];
-        int y = coords[1];
+        int x = coords.Item1;
+        int y = coords.Item2;
 
         //get the color of our current coordinates
         int thisColor = board[x, y];
@@ -163,25 +163,25 @@ public class FloodItBoard
         //code samples and documentation used for Tuples found here:
         //https://msdn.microsoft.com/en-us/library/system.tuple(v=vs.110).aspx
         if (y > 0 && board[x, y - 1] == thisColor) {
-            int[] n = { x, y - 1 };
+            Tuple<int, int> n = Tuple.Create(x, y - 1);
             neighbors.Add(n);
         }
 
         //check east
         if (x < sizeX - 1 && board[x + 1, y] == thisColor) {
-            int[] n = { x + 1, y };
+            Tuple<int, int> n = Tuple.Create(x + 1, y);
             neighbors.Add(n);
         }
 
         //check south
         if (y < sizeY - 1 && board[x, y + 1] == thisColor) {
-            int[] n = { x, y + 1 };
+            Tuple<int, int> n = Tuple.Create( x, y + 1 );
             neighbors.Add(n);
         }
 
         //check west
         if (x > 0 && board[x - 1, y] == thisColor) {
-            int[] n = { x - 1, y };
+            Tuple<int, int> n = Tuple.Create( x - 1, y );
             neighbors.Add(n);
         }
 

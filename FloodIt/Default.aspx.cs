@@ -63,6 +63,9 @@ public partial class _Default : Page
 
         //we now need to set up the board
         GenerateTable();
+
+        //we also need to set the score label to the score variable
+        lblScoreField.Text = "" + game.GetScore();
     }
 
     private void GenerateTable()
@@ -100,6 +103,7 @@ public partial class _Default : Page
         FloodItBoard game = (FloodItBoard)System.Web.HttpContext.Current.Session["gameboard"];
         game.FloodBoard(1);
         System.Web.HttpContext.Current.Session["gameboard"] = game;
+        Response.Redirect(Request.RawUrl);
     }
 
     protected void btnColor2_Click(object sender, EventArgs e)
@@ -107,6 +111,7 @@ public partial class _Default : Page
         FloodItBoard game = (FloodItBoard)System.Web.HttpContext.Current.Session["gameboard"];
         game.FloodBoard(2);
         System.Web.HttpContext.Current.Session["gameboard"] = game;
+        Response.Redirect(Request.RawUrl);
     }
 
     protected void btnColor3_Click(object sender, EventArgs e)
@@ -114,6 +119,7 @@ public partial class _Default : Page
         FloodItBoard game = (FloodItBoard)System.Web.HttpContext.Current.Session["gameboard"];
         game.FloodBoard(3);
         System.Web.HttpContext.Current.Session["gameboard"] = game;
+        Response.Redirect(Request.RawUrl);
     }
 
     protected void btnColor4_Click(object sender, EventArgs e)
@@ -121,6 +127,7 @@ public partial class _Default : Page
         FloodItBoard game = (FloodItBoard)System.Web.HttpContext.Current.Session["gameboard"];
         game.FloodBoard(4);
         System.Web.HttpContext.Current.Session["gameboard"] = game;
+        Response.Redirect(Request.RawUrl);
     }
 
     protected void btnColor5_Click(object sender, EventArgs e)
@@ -128,5 +135,6 @@ public partial class _Default : Page
         FloodItBoard game = (FloodItBoard)System.Web.HttpContext.Current.Session["gameboard"];
         game.FloodBoard(5);
         System.Web.HttpContext.Current.Session["gameboard"] = game;
+        Response.Redirect(Request.RawUrl);
     }
 }
