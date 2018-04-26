@@ -218,4 +218,23 @@ public class FloodItBoard
         //public getter method for the game state
         return gameOver;
     }
+
+    public int GetWidth()
+    {
+        //public getter method for board width
+        return sizeX;
+    }
+
+    public int GetHeight()
+    {
+        //public getter method for board height
+        return sizeY;
+    }
+
+    public int GetColor(int x, int y)
+    {
+        //public getter method for the color of a square at coordinates x, y
+
+        return board[x, y];
+    }
 }

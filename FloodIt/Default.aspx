@@ -8,14 +8,13 @@
         Created By: Matthew Pletcher
         Date Created: 04/24/18
         Last Edited By: Matthew Pletcher
-        Date Last Edited: 04/24/18
+        Date Last Edited: 04/25/18
         Assignment/Project: Final Project
         Part of: Flood-it!
         -->
+    <!--Div for holding game board-->
     <div class="jumbotron">
-        <h1>Example Jumbotron</h1>
-        <p class="lead">Copy that follows under the headline</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Example button &raquo;</a></p>
+        <asp:Table ID="tblGameBoard" runat="server"></asp:Table>
     </div>
 
     <div class="row">

@@ -1,4 +1,17 @@
-﻿/* Move down content because we have a fixed navbar that is 50px tall */
+﻿/*
+    Site.css
+    This is the CSS file for the Flood-it! website
+
+    Created By: Matthew Pletcher
+    Date Created: 04/24/18
+    Last Edited By: Matthew Pletcher
+    Date Last Edited: 04/25/18
+    Assignment/Project: Final Project
+    Part of: Flood-it!
+*/
+
+
+/* Move down content because we have a fixed navbar that is 50px tall */
 body {
     padding-top: 50px;
     padding-bottom: 20px;
@@ -26,4 +39,41 @@ textarea {
     .body-content {
         padding: 0;
     }
+}
+
+/*Set properties of the blocks that make up the gameboard*/
+.block {
+    height: 25px;
+    width: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Colors for the different squares on the board, palette taken from Pico-8 fantasy games console
+    https://www.lexaloffle.com/pico-8.php
+*/
+
+.Color1 {
+    /*Red*/
+    background-color: rgb(255, 0, 77);
+}
+
+.Color2 {
+    /*Yellow*/
+    background-color: rgb(255, 236, 39);
+}
+
+.Color3 {
+    /*Green*/
+    background-color: rgb(0, 228, 54);
+}
+
+.Color4 {
+    /*Blue*/
+    background-color: rgb(41, 173, 255);
+}
+
+.Color5 {
+    /*Indigo*/
+    background-color: rgb(131, 118, 156);
 }
