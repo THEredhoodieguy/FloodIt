@@ -14,11 +14,9 @@
         -->
     <!--Div for holding game board-->
     <div>
-        <div class="jumbotron">
-            <div class="col-md-4"><asp:Table ID="tblGameBoard" runat="server"></asp:Table></div>
-
-            <%--<div class="board"></div>--%>
-            
+        <div class="jumbotron board-container">
+            <div class="col-md-4 board"><asp:Table ID="tblGameBoard" runat="server"></asp:Table></div>
+   
             <div class="col-md-4">
                 <asp:Button ID="btnColor1" class="btn Color1 colorButton" runat="server" OnClick="btnColor1_Click" />
                 <asp:Button ID="btnColor2" class="btn Color2 colorButton" runat="server" OnClick="btnColor2_Click"/>
@@ -32,7 +30,7 @@
             <div class="col-md-4">
                 Your score:<asp:Label runat="server" ID="lblScoreField"></asp:Label>
                 <p>
-                    <a class="btn btn-default" >Reset &raquo;</a>
+                    <asp:Button ID="btnReset" runat="server" class="btn btn-default" Text="Reset" OnClick="btnReset_Click"></asp:Button>
                 </p>
             </div>
         </div>

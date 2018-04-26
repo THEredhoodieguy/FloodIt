@@ -100,6 +100,7 @@ public partial class _Default : Page
     //Set of event handlers for the buttons
     protected void btnColor1_Click(object sender, EventArgs e)
     {
+        //Red button
         FloodItBoard game = (FloodItBoard)System.Web.HttpContext.Current.Session["gameboard"];
         game.FloodBoard(1);
         System.Web.HttpContext.Current.Session["gameboard"] = game;
@@ -108,6 +109,7 @@ public partial class _Default : Page
 
     protected void btnColor2_Click(object sender, EventArgs e)
     {
+        //Yellow button
         FloodItBoard game = (FloodItBoard)System.Web.HttpContext.Current.Session["gameboard"];
         game.FloodBoard(2);
         System.Web.HttpContext.Current.Session["gameboard"] = game;
@@ -116,6 +118,7 @@ public partial class _Default : Page
 
     protected void btnColor3_Click(object sender, EventArgs e)
     {
+        //Green button
         FloodItBoard game = (FloodItBoard)System.Web.HttpContext.Current.Session["gameboard"];
         game.FloodBoard(3);
         System.Web.HttpContext.Current.Session["gameboard"] = game;
@@ -124,6 +127,7 @@ public partial class _Default : Page
 
     protected void btnColor4_Click(object sender, EventArgs e)
     {
+        //Blue button
         FloodItBoard game = (FloodItBoard)System.Web.HttpContext.Current.Session["gameboard"];
         game.FloodBoard(4);
         System.Web.HttpContext.Current.Session["gameboard"] = game;
@@ -132,9 +136,16 @@ public partial class _Default : Page
 
     protected void btnColor5_Click(object sender, EventArgs e)
     {
+        //Indigo button
         FloodItBoard game = (FloodItBoard)System.Web.HttpContext.Current.Session["gameboard"];
         game.FloodBoard(5);
         System.Web.HttpContext.Current.Session["gameboard"] = game;
+        Response.Redirect(Request.RawUrl);
+    }
+
+    protected void btnReset_Click(object sender, EventArgs e)
+    {
+        System.Web.HttpContext.Current.Session["gameboard"] = null;
         Response.Redirect(Request.RawUrl);
     }
 }

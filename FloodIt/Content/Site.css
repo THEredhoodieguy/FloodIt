@@ -51,8 +51,14 @@ textarea {
 
 /*Class to give height to the container for the game board*/
 .board {
-    height: 400px;
+    /*height: 400px;*/
+    padding: 10px;
     background-color: rgb(194, 195, 199);
+}
+
+/*Class for board container jumbotron*/
+.board-container {
+    min-height: 450px;
 }
 
 /*Set the properties of the buttons that play the game*/
