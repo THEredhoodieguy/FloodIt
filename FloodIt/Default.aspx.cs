@@ -72,6 +72,8 @@ public partial class _Default : Page
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
         }
+
+        lblFinalScore.Text = game.GetScore().ToString();
     }
 
     private void GenerateTable()
@@ -151,8 +153,17 @@ public partial class _Default : Page
 
     protected void btnReset_Click(object sender, EventArgs e)
     {
+        //resets the game board
         System.Web.HttpContext.Current.Session["gameboard"] = null;
         Response.Redirect(Request.RawUrl);
+    }
+
+    protected void btnSubmitScore_Click(object sender, EventArgs e)
+    {
+        //used to submit the score to the scoreboard
+        FloodItBoard game = (FloodItBoard)System.Web.HttpContext.Current.Session["gameboard"];
+        LeaderBoardFileLoader.SaveScore(game.GetScore(), "AAA", game.GetSeed(), DateTime.Now);
+        btnReset_Click(sender, e);
     }
 
 

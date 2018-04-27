@@ -17,12 +17,12 @@
     <div class="row">
         <%--Daily leaderboard--%>
         <div class="col-6">
-            <h1>Daily Scores</h1>
+            <h1>Daily High Scores</h1>
             <asp:Table runat="server" class="table" ID="tblDailyLeaderboard"/>
         </div>
         <%--All Time leaderboard--%>
         <div class="col-6">
-            <h1>All-Time Scores</h1>
+            <h1>All-Time High Scores</h1>
             <asp:Table runat="server" class="table" ID="tblAllTimeLeaderboard"/>
         </div>
     </div>

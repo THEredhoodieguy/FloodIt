@@ -35,21 +35,24 @@
             </div>
         </div>
         
-        <%-- Start Modal --%>
+        <%-- Start Modal 
+            Modal code came from Bootstrap docs, found here:
+            https://fezvrasta.github.io/bootstrap-material-design/docs/4.0/bootstrap-components/modal/
+            --%>
         <div class="modal" tabindex="-1" role="dialog" id="gameOverModal">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Modal title</h5>
+                        <h5 class="modal-title">Congratulation!</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>Modal body text goes here.</p>
+                        <p>You beat the game with a score of <asp:Label runat="server" ID="lblFinalScore"/>.</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <asp:Button runat="server" class="btn btn-primary" Text="Submit Score" ID="btnSubmitScore" OnClick="btnSubmitScore_Click"/>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>

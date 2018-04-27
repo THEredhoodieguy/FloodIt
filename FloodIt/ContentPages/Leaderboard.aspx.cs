@@ -72,7 +72,7 @@ public partial class ContentPages_Leaderboard : System.Web.UI.Page
         cell = new TableCell { Text = "Date" };
         row.Cells.Add(cell);
 
-        tblDailyLeaderboard.Rows.Add(row);
+        tblAllTimeLeaderboard.Rows.Add(row);
 
         for (int i = 1; i <= allTimeHighScores.Length; i++)
         {
@@ -94,7 +94,7 @@ public partial class ContentPages_Leaderboard : System.Web.UI.Page
             cell = new TableCell { Text = dailyHighScores[i - 1].Item4.ToString() };
             row.Cells.Add(cell);
 
-            tblDailyLeaderboard.Rows.Add(row);
+            tblAllTimeLeaderboard.Rows.Add(row);
         }
     }
 }
