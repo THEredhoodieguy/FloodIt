@@ -66,6 +66,12 @@ public partial class _Default : Page
 
         //we also need to set the score label to the score variable
         lblScoreField.Text = "" + game.GetScore();
+
+        //finally, we'll check if the game has been completed to see if we should bring down the modal
+        if(game.IsGameOver())
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
+        }
     }
 
     private void GenerateTable()
