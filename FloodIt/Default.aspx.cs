@@ -51,9 +51,9 @@ public partial class _Default : Page
         {
             //if there's no game board in the session, we need to make one
 
-            //TODO: implement storage and retrieval of a daily random seed
             //for now, just going to let the game board create its own seed, also going to init with a 8x8 board
-            game = new FloodItBoard(9, 9);
+            int dailySeed = DailySeedGenerator.GetDailySeed();
+            game = new FloodItBoard(9, 9, dailySeed);
             //now that the game board has been created and initialized, we can put the game object in the session
             System.Web.HttpContext.Current.Session["gameboard"] = game;
         }
@@ -148,4 +148,6 @@ public partial class _Default : Page
         System.Web.HttpContext.Current.Session["gameboard"] = null;
         Response.Redirect(Request.RawUrl);
     }
+
+
 }

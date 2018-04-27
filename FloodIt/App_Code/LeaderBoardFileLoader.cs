@@ -17,9 +17,9 @@ using System.Web;
 /// Assignment/Project: Final Project
 /// Part of: Flood-it!
 /// </summary>
-public class LeaderBoard
+public class LeaderBoardFileLoader
 {
-    public LeaderBoard()
+    public LeaderBoardFileLoader()
     {
         //
         // This class doesn't need a constructor since it's just a collection of static methods
@@ -32,11 +32,11 @@ public class LeaderBoard
 
         //used the following forum post to learn how to use FileSteam and StreamWriter:
         //https://social.msdn.microsoft.com/Forums/en-US/70f9af7f-52ff-4648-afc6-8d572340d5df/highscore-save-as-textfile-c?forum=csharpgeneral
-        string fileName = @"saved_scores.txt";
+        string fileName = AppDomain.CurrentDomain.BaseDirectory + @"/saved_scores.txt";
         using (FileStream fs = new FileStream(fileName, FileMode.Append, FileAccess.Write))
         using (StreamWriter sw = new StreamWriter(fs))
         {
-            //using " : " as the delimiter, write the score, the initials of the user, and the date of the score
+            //using " : " as the delimiter, write the score, the initials of the user, the seed it was generated with, and the date of the score
             sw.WriteLine("" + score.ToString() + ":" + initials + ":" + seed.ToString() + ":" + date.ToShortDateString());
         }
 
@@ -47,7 +47,7 @@ public class LeaderBoard
         //public getter method that reads the top numScores scores from the file and returns them
 
         //first we need to read in the scores
-        String[] scores = File.ReadAllLines("saved_scores.txt");
+        String[] scores = File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "/saved_scores.txt");
 
         Tuple<int, string, int, DateTime>[] tupleScores = new Tuple<int, string, int, DateTime>[scores.Count()];
 
@@ -84,7 +84,7 @@ public class LeaderBoard
         //doesn't discriminate by seed
 
         //first we need to read in the scores
-        String[] scores = File.ReadAllLines("saved_scores.txt");
+        String[] scores = File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "/saved_scores.txt");
 
         Tuple<int, string, int, DateTime>[] tupleScores = new Tuple<int, string, int, DateTime>[scores.Count()];
 
