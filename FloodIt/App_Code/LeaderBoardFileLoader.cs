@@ -13,7 +13,7 @@ using System.Web;
 /// Created By: Matthew Pletcher
 /// Date Created: 04/26/18
 /// Last Edited By: Matthew Pletcher
-/// Date Last Edited: 04/26/18
+/// Date Last Edited: 04/27/18
 /// Assignment/Project: Final Project
 /// Part of: Flood-it!
 /// </summary>
@@ -75,6 +75,12 @@ public class LeaderBoardFileLoader
             j++;
         }
 
+        //in case there aren't enough scores for the daily scoreboard, we'll pad it with junk values
+        while (j < numScores - 1)
+        {
+            topTupleScores[j] = new Tuple<int, string, int, DateTime>(int.MaxValue, "", 0, DateTime.MinValue);
+        }
+
         return topTupleScores;
     }
 
@@ -105,6 +111,12 @@ public class LeaderBoardFileLoader
         {
             topTupleScores[j] = tuple;
             j++;
+        }
+
+        //if there aren't enough scores, we'll add some junk ones
+        while (j < numScores - 1)
+        {
+            topTupleScores[j] = new Tuple<int, string, int, DateTime>(int.MaxValue, "", 0, DateTime.MinValue);
         }
 
         return topTupleScores;

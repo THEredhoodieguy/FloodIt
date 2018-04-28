@@ -8,7 +8,7 @@
         Created By: Matthew Pletcher
         Date Created: 04/24/18
         Last Edited By: Matthew Pletcher
-        Date Last Edited: 04/24/18
+        Date Last Edited: 04/27/18
         Assignment/Project: Final Project
         Part of: Flood-it!
         -->
@@ -20,22 +20,10 @@
                 Flood it! is a game about filling a board with one color. You play the game by changing the color of all the blocks connected to the upper-left hand corner.
                 You can do this by clicking on the buttons to the side of the game board, each one will change the color of all blocks connected to the upper-left block
                 to its color. More blocks will be added when their color matches that of the growing blob. Once the whole board is the same color, you've won.
-                The overall goal of the game is to have the lowest number of moves to 
+                The overall goal of the game is to have the lowest number of moves to fill the board.
             </p>
             <p>
                 <a class="btn btn-default" href="~/" runat="server">Play Now &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Homestar Runner</h2>
-
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/1WFgMOXl4v0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-            <p>
-                Everybody, everybody!
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://homestarrunner.com">Do you has? &raquo;</a>
             </p>
         </div>
     </div>

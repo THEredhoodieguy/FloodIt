@@ -8,13 +8,14 @@
         Created By: Matthew Pletcher
         Date Created: 04/24/18
         Last Edited By: Matthew Pletcher
-        Date Last Edited: 04/26/18
+        Date Last Edited: 04/27/18
         Assignment/Project: Final Project
         Part of: Flood-it!
         -->
     <!--Div for holding game board-->
     <div>
         <div class="jumbotron board-container">
+            <%-- Div for holding the game board --%>
             <div class="col-md-4 board"><asp:Table ID="tblGameBoard" runat="server"></asp:Table></div>
    
             <div class="col-md-4">
@@ -50,6 +51,12 @@
                     </div>
                     <div class="modal-body">
                         <p>You beat the game with a score of <asp:Label runat="server" ID="lblFinalScore"/>.</p>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Enter your initials:</span>
+                            </div>
+                            <asp:TextBox runat="server" class="form-control" Text="" ID="inptInitials" />
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <asp:Button runat="server" class="btn btn-primary" Text="Submit Score" ID="btnSubmitScore" OnClick="btnSubmitScore_Click"/>

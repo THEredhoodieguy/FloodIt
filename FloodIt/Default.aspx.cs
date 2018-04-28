@@ -162,7 +162,8 @@ public partial class _Default : Page
     {
         //used to submit the score to the scoreboard
         FloodItBoard game = (FloodItBoard)System.Web.HttpContext.Current.Session["gameboard"];
-        LeaderBoardFileLoader.SaveScore(game.GetScore(), "AAA", game.GetSeed(), DateTime.Now);
+        string initials = inptInitials.Text;
+        LeaderBoardFileLoader.SaveScore(game.GetScore(), initials, game.GetSeed(), DateTime.Now);
         btnReset_Click(sender, e);
     }
 
